@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //Bai 1
+        // function alertMessage() {
+        //     alert('Xin chào');
+        // }
+        // alertMessage();
+
+
+        //Bai 2
+        // function argument(number) {
+        //     return number +1;
+        // }
+        // let number = 5;
+        // alert(argument(number));
+
+
+        //Bai 3
+        // function num(a,b) {
+        //     if( a > b ) {
+        //         alert('a=' +a+ ' lớn hơn b=' +b);
+        //     } else {
+        //         return a+b;
+        //     }
+        // }
+        // console.log(num(5,6));
+
+
+        //Bai 4
+        // function addNumbers() {
+        //     firstNum = 4;
+        //     secondNum = 8;
+        //     result = firstNum + secondNum;
+        //     return result;
+        // }
+        // result = 0;
+        // alert(result);
+        // result = addNumbers(); 
+        // alert(result);
+
+
+        //Bai 5
+        let x = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let y = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        function find(z) {
+            let index ;
+            let result = '';
+            for (let i = 0; i < x.length; i++) {
+                if (z == x[i]) {
+                    index = i;
+                    for (let j = 0; j < y.length; j++) {
+                        if (index == j) {
+                            result = y[j];
+                            return result;
+                        } 
+                    }
+                }
+            }
+            return result ='Không tìm thấy'
+        }
+        let z = prompt('Nhập ngôi sao');
+        document.write(find(z));
+
+    </script>
+</body>
+</html>
