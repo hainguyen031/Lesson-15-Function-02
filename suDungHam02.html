@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Bai 1
+        // function square(a) {
+        //     return a*a;
+        // }
+        // let a = 5;
+        // alert(square(a));
+
+        
+        //Bai 2
+        // function chuvi(r) {
+        //     return 3.14*r*2;
+        // }
+        // function dientich(r) {
+        //     return 3.14*r*r;
+        // }
+        // let r=4;
+        // document.write('chu vi hinh tron: '+chuvi(r) + '<br/>');
+        // document.write('dien tich hinh tron: '+dientich(r));
+
+        
+        //Bai 3
+        // function giaiThua(n) {
+        //     if(n == 2) {
+        //         return 2;
+        //     }
+        //         return n * giaiThua(n - 1);
+        // }
+        // let n = 7;
+        // document.write('Giai thua cua '+n+ ' la '+giaiThua(n));
+
+
+        //Bai 4
+            // function check(n) {
+            //     if (!isNaN(n)) {
+            //         return true;
+            //     } 
+            //         return false;
+            // }
+            // let n = prompt('nhập');
+            // alert(check(n));
+
+
+        //Bai 5
+        // function min(a,b,c) {
+        //     if (a<b && a<c) {
+        //         return a;
+        //     } else if (b<a && b<c) {
+        //         return b;
+        //     } 
+        //     return c;
+        // }
+        // let a = parseInt(prompt('Nhập a'));
+        // let b = parseInt(prompt('Nhập b'));
+        // let c = parseInt(prompt('Nhập c'));
+        // document.write('Số bé nhất là: '+min(a,b,c));
+
+
+        //Bai 6
+        // function nguyenDuong(a) {
+        //     if (a>0 && a % 1==0) {
+        //         return true;
+        //     }
+        //     return false;
+        // }
+        // let a = prompt('Nhập số');
+        // alert(nguyenDuong(a));
+
+
+        //Bai 7
+        // function doiCho(a,b) {
+        //     let c = a;
+        //     a = b;
+        //     b = c;
+        //     return [a,b];
+        // }
+        // let a = prompt('nhập a');
+        // let b = prompt('nhập b');
+        // alert(doiCho(a,b));
+
+
+        //Bai 8
+        // let arr = [2,4,5,7,3];
+        // function reverse(arr) {
+        //     return arr.reverse();
+        // }
+        // alert(reverse(arr));
+
+
+        //Bai 9
+        let arr = [2,5,4,6,3,5,5];
+        let x = prompt('Nhập');
+        let count=0;
+        function find(arr,x) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] == x) {
+                    count++;
+                }
+            }
+            return count>0? count:-1;
+        }
+        console.log(find(arr,x));
+    </script>
+</body>
+</html>
