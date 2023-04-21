@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+</head>
+<style>
+    #aria-hidden {
+        display: none;
+    }
+</style>
+<body>
+    <h2>Add new product</h2>
+    <input type="text" id="add" placeholder="New Product">
+    <input type="button" onclick="addProduct()" value="Add" >
+    <hr>
+    <h3>Display All Product</h3>
+    <table>
+        <tr>
+            <th>Product Name</th>
+        </tr>
+        <tbody id="products"></tbody>
+    </table>
+    <div id="aria-hidden">
+        <h3>Edit Product</h3>
+        <form>
+            <input type="text" id="edit">
+            <input type="button" value="Hủy" onclick="outEdit()">
+            <input type="button" value="Sửa" onclick="saveEdit()">
+        </form>
+    </div>
+    <script>
+        let arr = [];
+        let doneEdit;
+        function addProduct() {
+            let x = document.getElementById('add').value;
+            arr.push(x);
+            document.getElementById("add").value = "";
+            let data = '';
+            if (arr.length >0) {
+                for (let i = 0; i < arr.length; i++) {
+                    data += '<tr>';
+                    data += '<td>' + arr[i] + '</td>';
+                    data += '<td><button onclick="editProduct(' + i + ')">Edit</button></td>';
+                    data += '<td><button onclick="deleteProduct(' + i + ')">Delete</button></td>';
+                    data += '</tr>';
+                }
+            }
+            document.getElementById('products').innerHTML=data;
+        }
+
+        function deleteProduct(item) {
+            arr.splice(item, 1);
+            addProduct();
+        };
+        
+        function editProduct() {
+            document.getElementById('aria-hidden').style.display='block';
+            function saveEdit() {
+                let newEdit = document.getElementById('edit').value;
+                arr[item]=newEdit;
+                addProduct(arr);
+                outEdit();
+            }
+        }
+        function outEdit() {
+                document.getElementById('aria-hidden').style.display='none';
+            }
+    </script>
+</body>
+</html>
