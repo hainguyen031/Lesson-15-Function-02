@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+    <p>Kiểm tra từ đối xứng</p>
+    <label for="Palindrome"> Từ kiểm tra : </label>
+    <input id='Palindrome' type="text" value="">
+    <input id="btn" type="button" value="Check">
+    <div id="result"><br></div>
+    <script>
+        let btn = document.getElementById("btn");
+        let res = document.getElementById("result");
+        btn.addEventListener('click', () => {
+            let arr = document.getElementById("Palindrome").value;
+            isPalindrome(arr);
+        })
+
+        function isPalindrome(arr) {
+            if (arr[0] == arr[arr.length - 1]) {
+                if (arr.length === 1) {
+                    res.innerHTML = 'Đây là từ đối xứng';
+                    return;
+                }
+                newArr = arr.slice(1,arr.length-1);
+                isPalindrome(newArr);
+            } else {
+                res.innerHTML = 'Không phải từ đối xứng';
+                return;
+            }
+        }
+    </script>
+</body>
+</html>
